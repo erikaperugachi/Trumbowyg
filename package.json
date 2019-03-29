@@ -1,21 +1,21 @@
 {
-  "name": "trumbowyg",
+  "name": "@criptext/trumbowyg",
   "title": "Trumbowyg",
   "description": "A lightweight WYSIWYG editor",
-  "version": "2.15.0",
+  "version": "2.16.0",
   "main": "dist/trumbowyg.js",
   "homepage": "http://alex-d.github.io/Trumbowyg",
   "author": {
-    "name": "Alexandre Demode (Alex-D)",
+    "name": "Alexandre Demode (Alex-D) - Criptext Inc.",
     "email": "contact@alex-d.fr",
     "url": "http://alex-d.fr"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Alex-D/Trumbowyg.git"
+    "url": "https://github.com/Criptext/Trumbowyg"
   },
   "bugs": {
-    "url": "https://github.com/Alex-D/Trumbowyg/issues"
+    "url": "https://github.com/Criptext/Trumbowyg/issues"
   },
   "license": "MIT",
   "devDependencies": {
