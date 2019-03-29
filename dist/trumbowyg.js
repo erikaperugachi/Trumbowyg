@@ -1,10 +1,10 @@
 /**
- * Trumbowyg v2.15.0 - A lightweight WYSIWYG editor
+ * Trumbowyg v2.16.0 - A lightweight WYSIWYG editor
  * Trumbowyg core file
  * ------------------------
  * @link http://alex-d.github.io/Trumbowyg
  * @license MIT
- * @author Alexandre Demode (Alex-D)
+ * @author Alexandre Demode (Alex-D) - Criptext Inc.
  *         Twitter : @AlexandreDemode
  *         Website : alex-d.fr
  */
@@ -453,8 +453,7 @@ Object.defineProperty(jQuery.trumbowyg, 'defaultOptions', {
             'b': 'strong',
             'i': 'em',
             's': 'del',
-            'strike': 'del',
-            'div': 'p'
+            'strike': 'del'
         },
 
         init: function () {
@@ -466,7 +465,7 @@ Object.defineProperty(jQuery.trumbowyg, 'defaultOptions', {
             try {
                 // Disable image resize, try-catch for old IE
                 t.doc.execCommand('enableObjectResizing', false, false);
-                t.doc.execCommand('defaultParagraphSeparator', false, 'p');
+                t.doc.execCommand('defaultParagraphSeparator', false, 'div');
             } catch (e) {
             }
 
@@ -1158,7 +1157,7 @@ Object.defineProperty(jQuery.trumbowyg, 'defaultOptions', {
                     // Wrap groups of inline elements in paragraphs (recursive)
                     var wrapInlinesInParagraphsFrom = function ($from) {
                         if ($from.length !== 0) {
-                            var $finalParagraph = $from.nextUntil(blockElementsSelector).addBack().wrapAll('<p/>').parent(),
+                            var $finalParagraph = $from.nextUntil(blockElementsSelector).addBack().wrapAll('<div/>').parent(),
                                 $nextElement = $finalParagraph.nextAll(inlineElementsSelector).first();
                             $finalParagraph.next('br').remove();
                             wrapInlinesInParagraphsFrom($nextElement);
@@ -1813,7 +1812,7 @@ Object.defineProperty(jQuery.trumbowyg, 'defaultOptions', {
             if (tag === 'DIV') {
                 return tags;
             }
-            if (tag === 'P' && element.style.textAlign !== '') {
+            if (tag === 'DIV' && element.style.textAlign !== '') {
                 tags.push(element.style.textAlign);
             }
 
